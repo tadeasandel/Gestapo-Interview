@@ -1,11 +1,14 @@
 using System;
 using UnityEngine;
 using TMPro;
+using System.Collections.Generic;
 
 public class DialogueController : MonoBehaviour
 {
   [SerializeField] level[] levels;
   [SerializeField] TextMeshProUGUI textMeshProText;
+
+  [SerializeField] int currentIndex;
 
   private void Start()
   {
@@ -14,6 +17,8 @@ public class DialogueController : MonoBehaviour
 
   public void LoadLevelByIndex(int index)
   {
+    DeleteCurrentLevel();
+    currentIndex = index;
     textMeshProText.text = levels[index].question.question;
     if (levels[index].usingButtonAnswer)
     {
@@ -27,7 +32,7 @@ public class DialogueController : MonoBehaviour
     }
     else if (levels[index].usingTextAnswers)
     {
-      ProcessTexts(index);
+      ProcessInputFields(index);
       print("This level has text Answer");
     }
     else
@@ -36,21 +41,62 @@ public class DialogueController : MonoBehaviour
     }
   }
 
-  public void EnterAnswer()
+  public void SumbitAnswer()
+  {
+    List<string> answers = new List<string>();
+    foreach (Transform currentChild in transform)
+    {
+      answers.Add(GetText(currentChild));
+    }
+    ProcessAnswers(answers);
+  }
+
+  private void ProcessAnswers(List<string> answers)
+  {
+    string[] correctAnswers = levels[currentIndex].question.correctAnswers;
+    for (int i = 0; i < correctAnswers.Length; i++)
+    {
+      if (correctAnswers[i] != answers[i])
+      {
+        FailedAnswer();
+        return;
+      }
+    }
+    LoadLevelByIndex(currentIndex + 1);
+  }
+
+  public void FailedAnswer(string failMessage = "wrong duh!")
   {
 
   }
 
-  private void ProcessTexts(int index)
+  public string GetText(Transform child)
   {
-    foreach (ButtonAnswer button in levels[index].buttonAnswers)
+    string text = "";
+    TMP_Dropdown currentDropDown = child.GetComponent<TMP_Dropdown>();
+    TMP_InputField currentInputField = child.GetComponent<TMP_InputField>();
+    if (currentDropDown != null)
     {
-      GameObject temporaryButton = Instantiate(button.buttonPrefab);
-      RectTransform buttonTransform = temporaryButton.GetComponent<RectTransform>();
-      if (buttonTransform != null)
+      text = currentDropDown.transform.GetChild(0).GetComponent<TMP_Text>().text;
+    }
+    else if (currentInputField != null)
+    {
+      text = currentInputField.text;
+      print(currentInputField.text);
+    }
+    return text;
+  }
+
+  private void ProcessInputFields(int index)
+  {
+    foreach (InputFieldAnswer inputField in levels[index].inputFields)
+    {
+      GameObject temporaryInputField = Instantiate(inputField.inputFieldPrefab, transform);
+      RectTransform inputFieldTransform = temporaryInputField.GetComponent<RectTransform>();
+      if (inputFieldTransform != null)
       {
-        buttonTransform.position = button.buttonLocation;
-        buttonTransform.localScale = new Vector3(button.width, button.height, 1);
+        inputFieldTransform.position = inputField.inputFieldLocation;
+        inputFieldTransform.localScale = new Vector3(inputField.width, inputField.height, 1);
       }
     }
   }
@@ -59,7 +105,7 @@ public class DialogueController : MonoBehaviour
   {
     foreach (DropDownAnswer dropDown in levels[index].dropDownAnswers)
     {
-      GameObject temporaryDropDown = Instantiate(dropDown.dropDownPrefab, this.transform);
+      GameObject temporaryDropDown = Instantiate(dropDown.dropDownPrefab, transform);
       RectTransform dropDownTransform = temporaryDropDown.GetComponent<RectTransform>();
       if (dropDownTransform != null)
       {
@@ -85,7 +131,10 @@ public class DialogueController : MonoBehaviour
 
   public void DeleteCurrentLevel()
   {
-
+    foreach (Transform childTransform in transform)
+    {
+      Destroy(childTransform.gameObject);
+    }
   }
 
 }
@@ -106,7 +155,7 @@ public class level
 
   [Header("Text Answers")]
   public bool usingTextAnswers;
-  public TextAnswer[] textAnswers;
+  public InputFieldAnswer[] inputFields;
 }
 
 [System.Serializable]

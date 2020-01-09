@@ -9,5 +9,4 @@ public class DropDownAnswer : ScriptableObject
   public float width;
   public float height;
   public Vector3 dropDownLocation;
-  public int correctAnswerIndex;
 }

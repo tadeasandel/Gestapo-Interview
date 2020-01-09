@@ -47,7 +47,7 @@
   <ItemGroup>     <Compile Include="Assets\Scripts\ButtonAnswer.cs" />
      <Compile Include="Assets\Scripts\DialogueController.cs" />
      <Compile Include="Assets\Scripts\DropDownAnswer.cs" />
-     <Compile Include="Assets\Scripts\TextAnswer.cs" />
+     <Compile Include="Assets\Scripts\InputFieldAnswer.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01_UGUI.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark02.cs" />

@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b37a20f3b1fca784eb5741e2fb72c118, type: 3}
+  m_Name: 2Q2ADD
+  m_EditorClassIdentifier: 
+  answerTexts:
+  - dsadsagaf
+  - dfsadgdsag
+  - asdsadsaf
+  dropDownPrefab: {fileID: 8795130450540879211, guid: 3b234aa86ea1886478932b2b6cbc6ed1,
+    type: 3}
+  width: 1
+  height: 1
+  dropDownLocation: {x: 400, y: 400, z: 1}
+  correctAnswerIndex: 1
