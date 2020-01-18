@@ -45,6 +45,7 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>     <Compile Include="Assets\Scripts\ButtonAnswer.cs" />
+     <Compile Include="Assets\Scripts\ButtonController.cs" />
      <Compile Include="Assets\Scripts\DialogueController.cs" />
      <Compile Include="Assets\Scripts\DropDownAnswer.cs" />
      <Compile Include="Assets\Scripts\InputFieldAnswer.cs" />

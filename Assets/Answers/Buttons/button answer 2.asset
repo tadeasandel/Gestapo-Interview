@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: dca36e712c779524590891309568937b, type: 3}
-  m_Name: button answer
+  m_Name: button answer 2
   m_EditorClassIdentifier: 
-  answerText: neco
+  answerText: sayian
   buttonPrefab: {fileID: 2245339162335140487, guid: 9eea626c44c445d42ab8bdf09ecde1c6,
     type: 3}
   width: 1
