@@ -113,12 +113,16 @@ public class DialogueController : MonoBehaviour
         dropDownTransform.localScale = new Vector3(dropDown.width, dropDown.height, 1);
       }
 
-      TMP_Dropdown DropdownElement = temporaryDropDown.GetComponent<TMP_Dropdown>();
-      if (DropdownElement != null)
+      TMP_Dropdown dropdownElement = temporaryDropDown.GetComponent<TMP_Dropdown>();
+      if (dropdownElement != null)
       {
-        for (int i = 0; i < DropdownElement.options.Count; i++)
+        dropdownElement.options.Clear();
+        List<TMP_Dropdown.OptionData> optionDataList = new List<TMP_Dropdown.OptionData>();
+        for (int i = 0; i < dropDown.answerTexts.Length; i++)
         {
-          DropdownElement.options[i].text = dropDown.answerTexts[i];
+          TMP_Dropdown.OptionData optionData = new TMP_Dropdown.OptionData();
+          optionData.text = dropDown.answerTexts[i];
+          dropdownElement.options.Add(optionData);
         }
       }
     }

@@ -9,8 +9,6 @@ public class ButtonAnswer : ScriptableObject
   public float width;
   public float height;
   public Vector3 buttonLocation;
-  // pokud je isCorrect false, zobrazí se okno s textem wrongAnswerText, pokud je isCorrect true, není třeba vyplňovat wrongAnswerText
   public bool isCorrect;
-  public string wrongAnswerText;
 }
 
