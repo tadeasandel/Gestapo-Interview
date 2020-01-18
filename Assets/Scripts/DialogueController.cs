@@ -48,10 +48,43 @@ public class DialogueController : MonoBehaviour
     {
       answers.Add(GetText(currentChild));
     }
-    ProcessAnswers(answers);
+    if (levels[currentIndex].question.doesOrderMatter)
+    {
+      ProcessAnswersInOrder(answers);
+    }
+    else
+    {
+      ProcessAnswersWithoutOrder(answers);
+    }
   }
 
-  private void ProcessAnswers(List<string> answers)
+  private void ProcessAnswersWithoutOrder(List<string> answers)
+  {
+    List<string> correctAnswers = new List<string>();
+    List<string> alrdyAnswered = new List<string>();
+    foreach (string item in levels[currentIndex].question.correctAnswers)
+    {
+      correctAnswers.Add(item);
+    }
+    foreach (string answer in answers)
+    {
+      if (!correctAnswers.Contains(answer))
+      {
+        FailedAnswer();
+        return;
+      }
+      if (alrdyAnswered.Contains(answer))
+      {
+        FailedAnswer();
+        return;
+      }
+      print(answer);
+      alrdyAnswered.Add(answer);
+    }
+    LoadLevelByIndex(currentIndex + 1);
+  }
+
+  private void ProcessAnswersInOrder(List<string> answers)
   {
     string[] correctAnswers = levels[currentIndex].question.correctAnswers;
     for (int i = 0; i < correctAnswers.Length; i++)
@@ -166,5 +199,6 @@ public class level
 public class Question
 {
   public string question;
+  public bool doesOrderMatter;
   public string[] correctAnswers;
 }

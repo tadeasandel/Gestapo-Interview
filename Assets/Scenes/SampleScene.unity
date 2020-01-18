@@ -244,19 +244,21 @@ MonoBehaviour:
   levels:
   - question:
       question: how is your day?
+      doesOrderMatter: 1
       correctAnswers:
       - super
-      - super
+      - neco
     usingButtonAnswer: 0
     buttonAnswers: []
     usingDropDownAnswers: 1
     dropDownAnswers:
-    - {fileID: 11400000, guid: d44b3a2432f9bc14cbda3a5723e1e2e3, type: 2}
+    - {fileID: 11400000, guid: e637682649bf27b4d89d1f245a8662fa, type: 2}
     - {fileID: 11400000, guid: 07a79183b3d42c141bcaef4156cd4495, type: 2}
     usingTextAnswers: 0
     inputFields: []
   - question:
       question: asdag
+      doesOrderMatter: 0
       correctAnswers:
       - not
       - much
@@ -272,6 +274,7 @@ MonoBehaviour:
     - {fileID: 11400000, guid: 66cd0aaa129c13f41b3f9907cfe8642a, type: 2}
   - question:
       question: adsagasdasdf
+      doesOrderMatter: 0
       correctAnswers:
       - asdsag
     usingButtonAnswer: 0
@@ -284,6 +287,7 @@ MonoBehaviour:
     inputFields: []
   - question:
       question: adsagasdasdf
+      doesOrderMatter: 0
       correctAnswers:
       - asdsag
     usingButtonAnswer: 0
@@ -296,6 +300,7 @@ MonoBehaviour:
     inputFields: []
   - question:
       question: adsagasdasdf
+      doesOrderMatter: 0
       correctAnswers:
       - asdsag
     usingButtonAnswer: 0
@@ -308,6 +313,7 @@ MonoBehaviour:
     inputFields: []
   - question:
       question: adsagasdasdf
+      doesOrderMatter: 0
       correctAnswers:
       - asdsag
     usingButtonAnswer: 0
@@ -320,6 +326,7 @@ MonoBehaviour:
     inputFields: []
   - question:
       question: adsagasdasdf
+      doesOrderMatter: 0
       correctAnswers:
       - asdsag
     usingButtonAnswer: 0
@@ -332,6 +339,7 @@ MonoBehaviour:
     inputFields: []
   - question:
       question: adsagasdasdf
+      doesOrderMatter: 0
       correctAnswers:
       - asdsag
     usingButtonAnswer: 0
@@ -344,6 +352,7 @@ MonoBehaviour:
     inputFields: []
   - question:
       question: adsagasdasdf
+      doesOrderMatter: 0
       correctAnswers:
       - asdsag
     usingButtonAnswer: 0
@@ -356,6 +365,7 @@ MonoBehaviour:
     inputFields: []
   - question:
       question: adsagasdasdf
+      doesOrderMatter: 0
       correctAnswers:
       - asdsag
     usingButtonAnswer: 0
@@ -368,6 +378,7 @@ MonoBehaviour:
     inputFields: []
   - question:
       question: adsagasdasdf
+      doesOrderMatter: 0
       correctAnswers:
       - asdsag
     usingButtonAnswer: 0
@@ -380,6 +391,7 @@ MonoBehaviour:
     inputFields: []
   - question:
       question: adsagasdasdf
+      doesOrderMatter: 0
       correctAnswers:
       - asdsag
     usingButtonAnswer: 0

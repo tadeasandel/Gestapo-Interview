@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: odpoved
   m_EditorClassIdentifier: 
   answerTexts:
-  - tada
+  - super
   - 'lucka '
   - 'radim '
   - ricc
