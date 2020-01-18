@@ -248,12 +248,12 @@ MonoBehaviour:
       correctAnswers:
       - super
       - neco
-    usingButtonAnswer: 0
-    buttonAnswers: []
-    usingDropDownAnswers: 1
-    dropDownAnswers:
-    - {fileID: 11400000, guid: e637682649bf27b4d89d1f245a8662fa, type: 2}
-    - {fileID: 11400000, guid: 07a79183b3d42c141bcaef4156cd4495, type: 2}
+    usingButtonAnswer: 1
+    buttonAnswers:
+    - {fileID: 11400000, guid: 76e3b8a255775684e8cd89180a0c48f7, type: 2}
+    - {fileID: 11400000, guid: ec173e8559ec96c48882823217a0f910, type: 2}
+    usingDropDownAnswers: 0
+    dropDownAnswers: []
     usingTextAnswers: 0
     inputFields: []
   - question:

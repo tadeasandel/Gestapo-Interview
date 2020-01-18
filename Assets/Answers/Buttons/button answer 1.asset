@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dca36e712c779524590891309568937b, type: 3}
   m_Name: button answer 1
   m_EditorClassIdentifier: 
-  answerText: super
+  buttonText: gotobadlevel
   buttonPrefab: {fileID: 2245339162335140487, guid: 9eea626c44c445d42ab8bdf09ecde1c6,
     type: 3}
   width: 1
   height: 1
-  buttonLocation: {x: 200, y: 400, z: 1}
-  isCorrect: 1
+  buttonLocation: {x: 400, y: 400, z: 1}
+  levelIndexToTransfer: 2

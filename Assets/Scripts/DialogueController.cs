@@ -2,6 +2,7 @@ using System;
 using UnityEngine;
 using TMPro;
 using System.Collections.Generic;
+using UnityEngine.UI;
 
 public class DialogueController : MonoBehaviour
 {
@@ -163,7 +164,24 @@ public class DialogueController : MonoBehaviour
 
   private void ProcessButtons(int index)
   {
-    
+    foreach (ButtonAnswer button in levels[index].buttonAnswers)
+    {
+      GameObject temporaryButton = Instantiate(button.buttonPrefab, transform);
+      RectTransform buttonTransform = temporaryButton.GetComponent<RectTransform>();
+      if (buttonTransform != null)
+      {
+        buttonTransform.position = button.buttonLocation;
+        buttonTransform.localScale = new Vector3(button.width, button.height, 1);
+      }
+
+      TMP_Text buttonText = temporaryButton.GetComponentInChildren<TMP_Text>();
+      if (buttonText != null)
+      {
+        buttonText.text = button.buttonText;
+      }
+
+      temporaryButton.GetComponent<ButtonController>().SetLevelToTransferIndex(button.levelIndexToTransfer);
+    }
   }
 
   public void DeleteCurrentLevel()
